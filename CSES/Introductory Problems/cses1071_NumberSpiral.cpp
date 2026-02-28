@@ -14,35 +14,21 @@ bool isEven(ll n) { return n % 2 == 0; }
 void solve() {
     ll row, col;
     cin >> row >> col;
-    vector<vll> m(row + 1, vll(col + 1, 0));
     
-    for (ll i = 1; i <= row; i++)
+    ll layer = max(row, col);
+    ll res = 0;
+    if (col == layer)       // row <= col
     {
-        for (ll j = 1; j <= col; j++)
-        {
-            if (i <= j)
-            {
-                if (isEven(j)) m[i][j] = 1LL * (j - 1)*(j - 1) + 1;
-                else m[i][j] = 1LL * j*j - (i - 1);
-            }
-            else
-            {
-                if (isEven(i)) m[i][j] = 1LL * i*i - (j - 1);
-                else m[i][j] = 1LL * (i - 1)*(i - 1) + j;
-            }
-        }
+        if (!isEven(col)) res = 1LL * col * col - (row - 1);
+        else res = 1LL * (col - 1) * (col - 1) + row;
+    }
+    else        // row > col
+    {
+        if (isEven(row)) res = 1LL * row * row - (col - 1);
+        else res = 1LL * (row - 1) * (row - 1) + col;
     }
 
-    for (int r = 1; r <= row; r++)
-    {
-        for (int c = 1; c <= col; c++)
-        {
-            cout << m[r][c] << " ";
-        }
-        cout << "\n";
-    }
-    
-    return;
+    cout << res << '\n';
 }
 
 int main() {
@@ -54,8 +40,8 @@ int main() {
     freopen("output.txt", "w", stdout);
     #endif
 
-    int t = 1;
-    // cin >> t;
+    int t;
+    cin >> t;
     
     while (t--) {
         solve();
