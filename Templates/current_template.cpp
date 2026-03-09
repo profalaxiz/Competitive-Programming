@@ -44,16 +44,8 @@ const ll INF = 1e18;
 #define For(i,a,b) for (int i = (a); i < (b); ++i)
 
 void setIO(string name = "") {
-    ios_base::sync_with_stdio(0); cin.tie(0);
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
-    #else
-        if (name.size()) {
-            freopen((name + ".in").c_str(), "r", stdin);
-            freopen((name + ".out").c_str(), "w", stdout);
-        }
-    #endif
+    freopen((name + ".in").c_str(), "r", stdin);
+    freopen((name + ".out").c_str(), "w", stdout);
 }
 
 void solve() {
@@ -61,7 +53,16 @@ void solve() {
 }
 
 int main() {
-    setIO("");
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    // setIO("");
+
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+    #endif
+
     auto start_time = chrono::high_resolution_clock::now();
 
     int t = 1;
