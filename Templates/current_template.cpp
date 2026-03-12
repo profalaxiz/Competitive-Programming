@@ -39,10 +39,6 @@ const ll INF = 1e18;
 #define each_perm(x) sort(all(x)); do
 #define end_perm(x) while(next_permutation(all(x))) 
 
-// Loops
-#define Trav(a,x) for (auto& a: x)
-#define For(i,a,b) for (int i = (a); i < (b); ++i)
-
 void setIO(string name = "") {
     freopen((name + ".in").c_str(), "r", stdin);
     freopen((name + ".out").c_str(), "w", stdout);
