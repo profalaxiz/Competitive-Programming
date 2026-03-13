@@ -16,11 +16,11 @@ using namespace std;
 
 // Types & Containers
 using ll = long long;
+using ld = long double;
 using str = string;
 using vi = vector<int>;
 using pi = pair<int,int>;
 using vpi = vector<pi>;
-using si = set<int>;
 
 // Macros
 #define sz(x) (int)(x).size()
@@ -33,15 +33,14 @@ using si = set<int>;
 #define mp make_pair
 
 // Constants
+const int MAX_N = 1e5 + 5;
 const int MOD = 1e9 + 7;
 const ll INF = 1e18;
+const ld EPS = 1e-9;
 
+// Permutation
 #define each_perm(x) sort(all(x)); do
 #define end_perm(x) while(next_permutation(all(x))) 
-
-// Loops
-#define Trav(a,x) for (auto& a: x)
-#define For(i,a,b) for (int i = (a); i < (b); ++i)
 
 void setIO(string name = "") {
     freopen((name + ".in").c_str(), "r", stdin);
